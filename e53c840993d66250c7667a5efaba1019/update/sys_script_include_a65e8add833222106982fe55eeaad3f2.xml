@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.DC1SetupHandler</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>DC1SetupHandler</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DC1SetupHandler = Class.create();
+DC1SetupHandler.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+	saveDC1Credentials: function () {
+		if (!gs.hasRole('admin')) {
+			return 'error: insufficient permissions';
+		}
+
+		var accountId = this.getParameter('sysparm_account_id') || '';
+		var apiKey = this.getParameter('sysparm_api_key') || '';
+
+		accountId = accountId.trim();
+		apiKey = apiKey.trim();
+
+		if (!accountId || !apiKey) {
+			return 'error: missing inputs';
+		}
+
+		try {
+			gs.setProperty('x_1586600_test_sno.dc1_account_id', accountId);
+			gs.setProperty('x_1586600_test_sno.dc1_api_key', apiKey);
+			gs.setProperty('x_1586600_test_sno.first_run_complete', 'true');
+			return 'success: saved';
+		} catch (e) {
+			gs.error('DC1SetupHandler: Failed to save system properties - ' + e.message);
+			return 'error: save failed';
+		}
+	},
+
+  verifyDC1Credentials: function () {
+    var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+    var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+
+    if (accountId && apiKey) {
+      return 'verified';
+    }
+    return 'not_verified';
+  }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 21:17:27</sys_created_on>
+        <sys_id>a65e8add833222106982fe55eeaad3f2</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>DC1SetupHandler</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_a65e8add833222106982fe55eeaad3f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 21:36:57</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>a65e8add833222106982fe55eeaad3f2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 21:17:27</sys_created_on>
+        <sys_id>057e4edd833222106982fe55eeaad307</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-16 21:17:27</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

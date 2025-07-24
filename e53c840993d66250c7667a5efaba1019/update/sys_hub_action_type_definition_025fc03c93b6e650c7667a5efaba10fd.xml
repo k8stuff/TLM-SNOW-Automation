@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>repopulate_endpoint_table</internal_name>
+        <label_cache>[]</label_cache>
+        <master_snapshot>d58f0c3c93b6e650c7667a5efaba10e9</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Repopulate Endpoint Table</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>025fc03c93b6e650c7667a5efaba10fd</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Repopulate Endpoint Table</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_025fc03c93b6e650c7667a5efaba10fd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_variable_value action="delete_multiple" query="document_key=025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>025fc03c93b6e650c7667a5efaba10fd</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>337f0c3c93b6e650c7667a5efaba1021</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:48</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">ab7fc83c93b6e650c7667a5efaba10f8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>025fc03c93b6e650c7667a5efaba10fd</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>7f7f0c3c93b6e650c7667a5efaba1020</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:48</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">af7fc83c93b6e650c7667a5efaba10fd</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd^id=025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=025fc03c93b6e650c7667a5efaba10fd^sys_idNOT INa37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</action>
+        <cid>1a3b800b-a548-47d7-9f6b-0443380a320b</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:47</sys_created_on>
+        <sys_id>a37fc83c93b6e650c7667a5efaba10eb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:47</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>a37fc83c93b6e650c7667a5efaba10eb</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:47</sys_created_on>
+        <sys_id>2f7fc83c93b6e650c7667a5efaba10f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:47</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>a37fc83c93b6e650c7667a5efaba10eb</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:47</sys_created_on>
+        <sys_id>ef7fc83c93b6e650c7667a5efaba10f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:47</sys_updated_on>
+        <value>var repopulator = new RepopulateTables();&#13;
+repopulator.repopulateFunction();&#13;
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=a37fc83c93b6e650c7667a5efaba10eb"/>
+    <sys_hub_action_input action="delete_multiple" query="model=025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_action_output action="delete_multiple" query="model=025fc03c93b6e650c7667a5efaba10fd^sys_idNOT INab7fc83c93b6e650c7667a5efaba10f8,af7fc83c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=5ca8c834-904b-4632-8357-7f64eec75ee4</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</model>
+        <model_id>025fc03c93b6e650c7667a5efaba10fd</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:47</sys_created_on>
+        <sys_id>ab7fc83c93b6e650c7667a5efaba10f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ab7fc83c93b6e650c7667a5efaba10f8"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ab7fc83c93b6e650c7667a5efaba10f8"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=3b005f96-591e-453b-90e4-28eaee8f25cc,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</model>
+        <model_id>025fc03c93b6e650c7667a5efaba10fd</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>af7fc83c93b6e650c7667a5efaba10fd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:54</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=af7fc83c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=af7fc83c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=025fc03c93b6e650c7667a5efaba10fd^sys_idNOT IN777f0c3c93b6e650c7667a5efaba1022"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</action_type_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>777f0c3c93b6e650c7667a5efaba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:48</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=777f0c3c93b6e650c7667a5efaba1022"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>737f0c3c93b6e650c7667a5efaba1003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:48</sys_created_on>
+        <sys_id>af7fc83c93b6e650c7667a5efaba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_025fc03c93b6e650c7667a5efaba10fd"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=025fc03c93b6e650c7667a5efaba10fd^sys_idNOT INa98f4c3c93b6e650c7667a5efaba1040"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"a98f4c3c93b6e650c7667a5efaba1040","name":"plan","plan_signature":null}}</plan>
+        <snapshot>e18f4c3c93b6e650c7667a5efaba100c</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a98f4c3c93b6e650c7667a5efaba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <internal_name>repopulate_endpoint_table</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>Repopulate Endpoint Table</name>
+        <natlang/>
+        <outputs/>
+        <parent_action display_value="Repopulate Endpoint Table">025fc03c93b6e650c7667a5efaba10fd</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d58f0c3c93b6e650c7667a5efaba10e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:54</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>d58f0c3c93b6e650c7667a5efaba10e9</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>298f4c3c93b6e650c7667a5efaba100a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">198f4c3c93b6e650c7667a5efaba1000</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>d58f0c3c93b6e650c7667a5efaba10e9</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>e98f4c3c93b6e650c7667a5efaba100a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">1d8f0c3c93b6e650c7667a5efaba10fb</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9^id=d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=d58f0c3c93b6e650c7667a5efaba10e9^sys_idNOT IN918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Repopulate Endpoint Table">d58f0c3c93b6e650c7667a5efaba10e9</action>
+        <cid>1a3b800b-a548-47d7-9f6b-0443380a320b</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>918f0c3c93b6e650c7667a5efaba10f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>918f0c3c93b6e650c7667a5efaba10f0</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>518f0c3c93b6e650c7667a5efaba10fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <value>var repopulator = new RepopulateTables();&#13;
+repopulator.repopulateFunction();&#13;
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>918f0c3c93b6e650c7667a5efaba10f0</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>9d8f0c3c93b6e650c7667a5efaba10f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=918f0c3c93b6e650c7667a5efaba10f0"/>
+    <sys_hub_action_input action="delete_multiple" query="model=d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_hub_action_output action="delete_multiple" query="model=d58f0c3c93b6e650c7667a5efaba10e9^sys_idNOT IN198f4c3c93b6e650c7667a5efaba1000,1d8f0c3c93b6e650c7667a5efaba10fb"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=3b005f96-591e-453b-90e4-28eaee8f25cc,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Repopulate Endpoint Table">d58f0c3c93b6e650c7667a5efaba10e9</model>
+        <model_id>d58f0c3c93b6e650c7667a5efaba10e9</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>198f4c3c93b6e650c7667a5efaba1000</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=198f4c3c93b6e650c7667a5efaba1000"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=198f4c3c93b6e650c7667a5efaba1000"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=5ca8c834-904b-4632-8357-7f64eec75ee4</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Repopulate Endpoint Table">d58f0c3c93b6e650c7667a5efaba10e9</model>
+        <model_id>d58f0c3c93b6e650c7667a5efaba10e9</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>1d8f0c3c93b6e650c7667a5efaba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1d8f0c3c93b6e650c7667a5efaba10fb"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=1d8f0c3c93b6e650c7667a5efaba10fb"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=d58f0c3c93b6e650c7667a5efaba10e9^sys_idNOT IN218f4c3c93b6e650c7667a5efaba100c"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Repopulate Endpoint Table">d58f0c3c93b6e650c7667a5efaba10e9</action_type_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>218f4c3c93b6e650c7667a5efaba100c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=218f4c3c93b6e650c7667a5efaba100c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>198f0c3c93b6e650c7667a5efaba10ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:45:55</sys_created_on>
+        <sys_id>998f4c3c93b6e650c7667a5efaba1005</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-14 22:45:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_d58f0c3c93b6e650c7667a5efaba10e9"/>
+    <sys_hub_action_type_definition action="UPDATE">
+        <sys_id>025fc03c93b6e650c7667a5efaba10fd</sys_id>
+        <latest_snapshot>d58f0c3c93b6e650c7667a5efaba10e9</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch3-04-17-2025_04-30-2025_1345.zip</compiler_build>
+    </sys_hub_action_type_definition>
+</record_update>

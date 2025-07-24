@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Automation_Event">b18c0cd683de2a106982fe55eeaad3ac</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Automation_Events</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1586600_test_sno_automation_event</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_1586600_test_sno.automation_event_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 05:39:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9c4e10c093622210c7667a5efaba1087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Automation_Events</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_app_module_9c4e10c093622210c7667a5efaba1087</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 05:39:08</sys_updated_on>
+        <timeline_page/>
+        <title>Automation_Events</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sys_app_module_9c4e10c093622210c7667a5efaba1087</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Automation_Event">b18c0cd683de2a106982fe55eeaad3ac</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Automation_Events</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_1586600_test_sno_automation_event</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles>x_1586600_test_sno.automation_event_user</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-30 05:39:08</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>9c4e10c093622210c7667a5efaba1087</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Automation_Events</sys_name><sys_overrides/><sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package><sys_policy/><sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope><sys_update_name>sys_app_module_9c4e10c093622210c7667a5efaba1087</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-30 05:39:08</sys_updated_on><timeline_page/><title>Automation_Events</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>1462555390</payload_hash>
+        <record_name>Automation_Events</record_name>
+        <reverted_from/>
+        <source>eb395f729352ea50c7667a5efaba1077</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 05:39:08</sys_created_on>
+        <sys_id>104e10c093622210c7667a5efaba108c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197bf58ab220000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 05:39:08</sys_updated_on>
+        <type>Module</type>
+        <update_guid>144e10c029622210a43ef51bb122be8b</update_guid>
+        <update_guid_history>144e10c029622210a43ef51bb122be8b:1462555390</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Automation_Events">74e0430c936e2210c7667a5efaba1055</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 17:29:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>6e92889658c740769a8e302b0fd6cb24</sys_id>
+        <sys_metadata>9c4e10c093622210c7667a5efaba1087</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Automation_Events</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sys_app_module_9c4e10c093622210c7667a5efaba1087</sys_update_name>
+        <sys_update_version display_value="sys_app_module_9c4e10c093622210c7667a5efaba1087">104e10c093622210c7667a5efaba108c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 17:29:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

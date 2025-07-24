@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="53118b08936e2210c7667a5efaba1063" extends="task" label="Automation_Table" max_length="40" name="x_1586600_test_sno_automation_table" type="collection">
+        <element label="Endpoint ID" max_length="40" name="endpoint_id" type="integer"/>
+        <element label="Requested For" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element choice="1" choice_field="actions" choice_table="x_1586600_test_sno_automation_table" label="Actions" max_length="40" name="actions" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Renew" value="-- New choice --"/>
+            </choice>
+        </element>
+        <element label="Profile ID" max_length="40" name="profile_id" type="string"/>
+        <element label="Common Name" max_length="40" name="common_name" type="string"/>
+        <element label="Certificate ID" max_length="40" name="certificate_id" type="string"/>
+        <element label="Department" max_length="40" name="department" type="string"/>
+        <element label="Profile" max_length="40" name="profile" type="string"/>
+        <element label="Inventory ID" max_length="40" name="inventory_id" type="string"/>
+        <element label="Valid To" max_length="40" name="valid_to" type="string"/>
+        <element label="Host Name" max_length="40" name="host_name" type="string"/>
+        <element label="Approver" max_length="32" name="approver" reference="sys_user" type="reference"/>
+        <element label="Automation Status" max_length="40" name="automation_status" type="string"/>
+        <element label="Endpoint Location" max_length="40" name="endpoint_location" type="string"/>
+        <element label="Application" max_length="40" name="application" type="string"/>
+        <element label="Tags" max_length="40" name="tags" type="string"/>
+    </element>
+</database>

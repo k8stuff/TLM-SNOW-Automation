@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.Get API Name of Flow</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Get API Name of Flow</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var flowGR = new GlideRecord('sys_hub_flow');
+if (flowGR.get('de62ce078326e2106982fe55eeaad3b8')) {
+    gs.info('Flow Label: ' + flowGR.getValue('title'));
+    gs.info('Flow API Name: ' + flowGR.getValue('name')); // ← THIS is what you use in FlowAPI.startFlow()
+    gs.info('Application Scope: ' + flowGR.getValue('sys_scope'));
+} else {
+    gs.error('Flow not found with that sys_id');
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-09 20:49:24</sys_created_on>
+        <sys_id>0fd4c2878326e2106982fe55eeaad394</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get API Name of Flow</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_0fd4c2878326e2106982fe55eeaad394</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-09 20:49:24</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0fd4c2878326e2106982fe55eeaad394</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-09 20:49:23</sys_created_on>
+        <sys_id>35e44ac78326e2106982fe55eeaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-09 20:49:23</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

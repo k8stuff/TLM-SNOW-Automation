@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.custom-header {
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>automation_events_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Automation Events Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:21:01</sys_created_on>
+        <sys_id>574ee18a935ea650c7667a5efaba1004</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Automation Events Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_574ee18a935ea650c7667a5efaba1004</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:34:59</sys_updated_on>
+        <template><![CDATA[<div class="custom-header">
+<div class="card p-4 mb-4">
+  <h3 class="card p-4 mb-4">Automation Events</h3>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="event in data.events">
+      <strong>{{event.timestamp}}</strong> - {{event.description}} ({{event.event_type}})
+    </li>
+  </ul>
+</div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>574ee18a935ea650c7667a5efaba1004</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:21:01</sys_created_on>
+        <sys_id>574ea94e935ea650c7667a5efaba10d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:21:01</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_widget_574ee18a935ea650c7667a5efaba1004</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css&gt;.custom-header {
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}&lt;/css&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;true&lt;/has_preview&gt;
+        &lt;id&gt;automation_events_widget&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;
+        &lt;name&gt;Automation Events Widget&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-24 06:21:01&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;574ee18a935ea650c7667a5efaba1004&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Automation Events Widget&lt;/sys_name&gt;
+        &lt;sys_package display_value="Test Snow Automation " source="x_1586600_test_sno"&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Test Snow Automation "&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_574ee18a935ea650c7667a5efaba1004&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-24 06:34:59&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div class="custom-header"&gt;
+&lt;div class="card p-4 mb-4"&gt;
+  &lt;h3 class="card p-4 mb-4"&gt;Automation Events&lt;/h3&gt;
+  &lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item" ng-repeat="event in data.events"&gt;
+      &lt;strong&gt;{{event.timestamp}}&lt;/strong&gt; - {{event.description}} ({{event.event_type}})
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+    &lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;
+        &lt;id&gt;574ee18a935ea650c7667a5efaba1004&lt;/id&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-24 06:21:01&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;574ea94e935ea650c7667a5efaba10d9&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-24 06:21:01&lt;/sys_updated_on&gt;
+        &lt;table&gt;sp_widget&lt;/table&gt;
+        &lt;use_es_latest&gt;true&lt;/use_es_latest&gt;
+    &lt;/sys_es_latest_script&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>429771962</payload_hash>
+        <record_name>Automation Events Widget</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:29</sys_created_on>
+        <sys_id>dc39dbf29352ea50c7667a5efaba108a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446db50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:29</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d839dbf2b752ea504aa54e7ff7389c8a</update_guid>
+        <update_guid_history>d839dbf2b752ea504aa54e7ff7389c8a:0,83c89bb2d852ea507e1764ce93e87e08:360861502,ac508be61dda6a50afcc911286ef3979:0,45008ba6e2da6a5064cb9aefb711b495:-23028572,7f717142049ea6502bfbf8c6850092f9:1870828360,e0413d02789ea6506c16f0ffc20680d3:874789983,174ea94e9b5ea65046213726d1f793d8:-361491880</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Automation Events Widget">f38f7bc893a26210c7667a5efaba1066</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:03:31</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>32d6937db09740e0adccdaa25ef8f490</sys_id>
+        <sys_metadata>574ee18a935ea650c7667a5efaba1004</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Automation Events Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_widget_574ee18a935ea650c7667a5efaba1004</sys_update_name>
+        <sys_update_version display_value="sp_widget_574ee18a935ea650c7667a5efaba1004">dc39dbf29352ea50c7667a5efaba108a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 22:03:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

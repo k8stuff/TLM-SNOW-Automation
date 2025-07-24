@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.RepopulateTables</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>RepopulateTables</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var RepopulateTables = Class.create();
+RepopulateTables.prototype = {
+    initialize: function() {},
+
+    repopulateFunction: function() {
+        try {
+            // Step 1: Get system properties
+            var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+            var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+            if (!accountId || !apiKey) {
+                gs.error("Missing DigiCert system properties. Populate operation aborted.");
+                return;
+            }
+
+            // Step 2: Prepare account parameter
+            var accountParam = encodeURIComponent(JSON.stringify({ id: accountId }));
+
+            // Step 3: Fetch main Endpoint Discovery data
+            var rSecured = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Endpoint Discovery - Secured');
+            rSecured.setHttpMethod("GET");
+            rSecured.setStringParameterNoEscape('account_encoded', accountParam);
+            rSecured.setStringParameterNoEscape('offset', '0');
+            rSecured.setRequestHeader("Content-Type", "application/json");
+            rSecured.setRequestHeader("x-api-key", apiKey);
+
+            var responseSecured = rSecured.execute();
+            var endpoints = [];
+            try {
+                endpoints = JSON.parse(responseSecured.getBody()).items || [];
+            } catch (ex1) {
+                gs.error("Could not parse secured endpoints response: " + ex1 + '\n' + responseSecured.getBody());
+                return;
+            }
+            if (endpoints.length === 0) {
+                gs.info("No secured endpoints returned.");
+                return;
+            }
+
+            // Step 4: Fetch all extra endpoint info (with paging)
+            var rExtra = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Get Extra Endpoint Info');
+            rExtra.setHttpMethod("GET");
+            var accountObj = { id: accountId, name: accountId };
+            var accountParamTwo = encodeURIComponent(JSON.stringify(accountObj));
+            var allExtraItems = [];
+            var offset = 0, limit = 100, total = 1;
+            while (offset < total) {
+                rExtra.setStringParameterNoEscape('account_encoded', accountParamTwo);
+                rExtra.setStringParameterNoEscape('offset', offset + '');
+                rExtra.setStringParameterNoEscape('limit', limit + '');
+                rExtra.setRequestHeader("Content-Type", "application/json");
+                rExtra.setRequestHeader("x-api-key", apiKey);
+                var resp = rExtra.execute();
+                var parsed;
+                try {
+                    parsed = JSON.parse(resp.getBody());
+                } catch (ex2) {
+                    gs.error("Could not parse extra endpoint info response: " + ex2 + '\n' + resp.getBody());
+                    break;
+                }
+                var extraItems = parsed.items || [];
+                total = parsed.total || extraItems.length;
+                allExtraItems = allExtraItems.concat(extraItems);
+                if (extraItems.length < limit) break;
+                offset += limit;
+            }
+
+            // Step 5: Build map by most recent valid_from date (per common name)
+            var newestCertMap = {}; // key: (common_name).toLowerCase().trim()
+            for (var i = 0; i < allExtraItems.length; i++) {
+                var item = allExtraItems[i];
+                var common = (item.common_name || '').toLowerCase().trim();
+                var validFrom = item.valid_from ? new Date(item.valid_from) : null;
+                if (!validFrom) continue;
+                if (
+                    !newestCertMap[common] ||
+                    new Date(newestCertMap[common].valid_from) < validFrom
+                ) {
+                    newestCertMap[common] = item;
+                }
+            }
+
+            // Step 6: Loop and upsert only one row per (common_name, host_name)
+            var allowedStatuses = ['CONFIGURED', 'AUTOMATION_SUCCESSFUL'];
+            var insertedKeys = {};
+
+            for (var i = 0; i < endpoints.length; i++) {
+    var ep = endpoints[i];
+    if (!allowedStatuses.includes(ep.automation_status)) continue;
+
+    var profile_id = (ep.profile && ep.profile.id) ? ep.profile.id : '';
+    var commonKey = (ep.common_name || '').toLowerCase().trim();
+    var hostKey = (ep.host_name || '').toLowerCase().trim();
+    var dedupeKey = commonKey + '|' + hostKey;
+
+    if (insertedKeys[dedupeKey]) continue;
+    insertedKeys[dedupeKey] = true;
+
+    var certItem = newestCertMap[commonKey] || {};
+    var valid_from = certItem.valid_from || '';
+    var valid_to = certItem.valid_to || '';
+    var days_left = certItem.expires_in_days || '';
+
+    // Get tags as comma-separated string
+    var tags = (ep.tags && ep.tags.length) ? ep.tags.join(',') : '';
+
+    // Upsert
+    var existing = new GlideRecord('x_1586600_test_sno_endpoint_table');
+    existing.addQuery('host_name', ep.host_name || '');
+    existing.addQuery('common_name', ep.common_name || '');
+    existing.addQuery('endpoint_location', ep.location || '');
+    existing.query();
+    if (existing.next()) {
+        existing.setValue('valid_from', valid_from);
+        existing.setValue('valid_to', valid_to);
+        existing.setValue('days_left', days_left);
+        existing.setValue('agent_name', ep.connector);
+        existing.setValue('certificate_id', ep.certificate_id);
+        existing.setValue('automation_status', ep.automation_status || '');
+        existing.setValue('tags', tags); // <--- add this line
+        existing.update();
+        gs.info("Updated record for: " + ep.common_name + "|" + ep.inventory_id);
+    } else {
+        var gr = new GlideRecord('x_1586600_test_sno_endpoint_table');
+        gr.initialize();
+        gr.setValue('application', ep.application || '');
+        gr.setValue('host_name', ep.host_name || '');
+        gr.setValue('common_name', ep.common_name || '');
+        gr.setValue('valid_from', valid_from);
+        gr.setValue('valid_to', valid_to);
+        gr.setValue('endpoint_location', ep.location || '');
+        gr.setValue('automation_status', ep.automation_status || '');
+        gr.setValue('certificate_id', ep.certificate_id || '');
+        gr.setValue('inventory_id', ep.inventory_id);
+        gr.setValue('days_left', days_left);
+        gr.setValue('profile_id', profile_id);
+        gr.setValue('agent_name', ep.connector);
+        gr.setValue('tags', tags); // <--- add this line
+        var insertedSysId = gr.insert();
+        if (insertedSysId) {
+            gs.info("Inserted new record for: " + ep.common_name + "|" + ep.inventory_id);
+        } else {
+            gs.error("Insert failed for: " + ep.common_name + "|" + ep.inventory_id);
+        }
+    }
+}
+        } catch (ex) {
+            gs.error("Error in repopulateFunction: " + ex.message);
+        }
+    },
+
+    type: 'RepopulateTables'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-14 22:43:23</sys_created_on>
+        <sys_id>87de8cf893b6e650c7667a5efaba1029</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>RepopulateTables</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_87de8cf893b6e650c7667a5efaba1029</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 04:11:15</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>87de8cf893b6e650c7667a5efaba1029</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 21:41:09</sys_created_on>
+        <sys_id>9ce31255837222106982fe55eeaad3de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-16 21:41:09</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Endpoint Certificate Details Page - Container 4</name>
+        <order>4</order>
+        <semantic_tag/>
+        <sp_page display_value="endpoint_certificate_details_page">4be2650e931ea650c7667a5efaba10c2</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:35:56</sys_created_on>
+        <sys_id>a9b17542939ea650c7667a5efaba1061</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Endpoint Certificate Details Page - Container 4</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_container_a9b17542939ea650c7667a5efaba1061</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:35:56</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_container_a9b17542939ea650c7667a5efaba1061</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Endpoint Certificate Details Page - Container 4</name><order>4</order><semantic_tag/><sp_page display_value="endpoint_certificate_details_page">4be2650e931ea650c7667a5efaba10c2</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-24 06:35:56</sys_created_on><sys_id>a9b17542939ea650c7667a5efaba1061</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Endpoint Certificate Details Page - Container 4</sys_name><sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package><sys_policy/><sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope><sys_update_name>sp_container_a9b17542939ea650c7667a5efaba1061</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-24 06:35:56</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-628379586</payload_hash>
+        <record_name>Endpoint Certificate Details Page - Container 4</record_name>
+        <reverted_from/>
+        <source>e545d8c69396a650c7667a5efaba1072</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:35:56</sys_created_on>
+        <sys_id>6db1fd42939ea650c7667a5efaba10a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197a0a681f50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:35:56</sys_updated_on>
+        <type>Container</type>
+        <update_guid>2db17542979ea6500e260727a444c062</update_guid>
+        <update_guid_history>2db17542979ea6500e260727a444c062:-628379586</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Endpoint Certificate Details Page - Container 4">7af13582939ea650c7667a5efaba105f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:37:06</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>01dc2f68eec74f8b8d619458eab3f309</sys_id>
+        <sys_metadata>a9b17542939ea650c7667a5efaba1061</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Endpoint Certificate Details Page - Container 4</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_container_a9b17542939ea650c7667a5efaba1061</sys_update_name>
+        <sys_update_version display_value="sp_container_a9b17542939ea650c7667a5efaba1061">6db1fd42939ea650c7667a5efaba10a3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:37:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

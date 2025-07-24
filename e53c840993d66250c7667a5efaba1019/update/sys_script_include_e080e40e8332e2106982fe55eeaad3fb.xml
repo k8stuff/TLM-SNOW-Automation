@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.CheckAutomationStatusByInventoryId</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description>Will continue to run after Trigger Digicert Renewal in Flow under a DO UNTIL LOOP -&gt; Used for refreshing widget after renewal</description>
+        <mobile_callable>false</mobile_callable>
+        <name>CheckAutomationStatusByInventoryId</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CheckAutomationStatusByInventoryId = Class.create();
+CheckAutomationStatusByInventoryId.prototype = {
+    initialize: function () {},
+    /**
+     * Checks the automation status of a specific endpoint by inventory_id
+     * @param {String} inventoryId - The inventory_id to search for
+     * @returns {String} automation_status of the matched endpoint or error code
+     */
+    checkStatus: function (inventoryId) {
+        gs.info('[CheckAutomationStatus] Checking automation_status for inventory_id: ' + inventoryId);
+        try {
+            // Get system properties
+            var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+            var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+            if (!accountId || !apiKey) {
+                gs.error('[CheckAutomationStatus] Missing account ID or API key');
+                return 'MISSING_CREDENTIALS';
+            }
+            // Prepare REST call
+            var restMsg = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Endpoint Discovery - Secured');
+            restMsg.setHttpMethod("GET");
+            var accountParam = encodeURIComponent(JSON.stringify({ id: accountId }));
+            restMsg.setStringParameterNoEscape('account_encoded', accountParam);
+            restMsg.setStringParameterNoEscape('offset', '0');
+            restMsg.setRequestHeader('Content-Type', 'application/json');
+            restMsg.setRequestHeader('x-api-key', apiKey);
+            // Execute and parse
+            var response = restMsg.execute();
+            var body = response.getBody();
+            var parsed;
+            try {
+                parsed = JSON.parse(body);
+            } catch (parseErr) {
+                gs.error('[CheckAutomationStatus] Failed to parse response: ' + parseErr.message + '\nRaw: ' + body);
+                return 'INVALID_JSON';
+            }
+            var endpoints = parsed.items || [];
+            if (!Array.isArray(endpoints)) {
+                gs.warn('[CheckAutomationStatus] Unexpected structure. No endpoint items found.');
+                return 'NO_ENDPOINTS';
+            }
+            // Search for the matching inventory_id
+            for (var i = 0; i < endpoints.length; i++) {
+    var ep = endpoints[i];
+    var epId = ep.inventory_id || 'N/A';
+    var status = ep.automation_status || 'UNKNOWN';
+    gs.info('[DEBUG] Endpoint ' + (i + 1) + ': inventory_id=' + epId + ', automation_status=' + status);
+    gs.info('[DEBUG] Comparing to input inventory_id: ' + inventoryId);
+    if (epId === inventoryId) {
+        gs.info('[DEBUG] Match found. Returning status: ' + status);
+        return { automation_status: status };
+    }
+}
+            gs.warn('[CheckAutomationStatus] No matching inventory_id found.');
+            return 'NOT_FOUND';
+        } catch (e) {
+            gs.error('[CheckAutomationStatus] Exception occurred: ' + e.message);
+            return 'ERROR';
+        }
+    },
+    type: 'CheckAutomationStatusByInventoryId'
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 21:14:32</sys_created_on>
+        <sys_id>e080e40e8332e2106982fe55eeaad3fb</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>CheckAutomationStatusByInventoryId</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_e080e40e8332e2106982fe55eeaad3fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 22:04:09</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e080e40e8332e2106982fe55eeaad3fb</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 21:14:31</sys_created_on>
+        <sys_id>7df0640a8332e2106982fe55eeaad3d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 21:14:31</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

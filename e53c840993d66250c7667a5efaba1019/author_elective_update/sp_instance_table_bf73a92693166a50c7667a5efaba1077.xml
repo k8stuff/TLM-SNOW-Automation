@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>certificate_id,common_name,certificate_owners,sys_created_on,current_certificate,sys_created_by,endpoint_id,department,sans,order_id,serial_number,status,sys_tags,sys_id,tags,sys_updated_by,sys_updated_on,sys_mod_count,validity_from,validity_to</field_list>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">267be14a935ea650c7667a5efaba1081</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 18:50:47</sys_created_on>
+        <sys_id>bf73a92693166a50c7667a5efaba1077</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Certificate Details</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_instance_table_bf73a92693166a50c7667a5efaba1077</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 18:52:02</sys_updated_on>
+        <table>x_1586600_test_sno_certificate_details</table>
+        <title>Certificate Details</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="DELETE" query="documentkey=bf73a92693166a50c7667a5efaba1077"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_instance_table_bf73a92693166a50c7667a5efaba1077</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>certificate_id,common_name,certificate_owners,sys_created_on,current_certificate,sys_created_by,endpoint_id,department,sans,order_id,serial_number,status,sys_tags,sys_id,tags,sys_updated_by,sys_updated_on,sys_mod_count,validity_from,validity_to</field_list>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">267be14a935ea650c7667a5efaba1081</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 18:50:47</sys_created_on>
+        <sys_id>bf73a92693166a50c7667a5efaba1077</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Certificate Details</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_instance_table_bf73a92693166a50c7667a5efaba1077</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 18:52:02</sys_updated_on>
+        <table>x_1586600_test_sno_certificate_details</table>
+        <title>Certificate Details</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=bf73a92693166a50c7667a5efaba1077"/>
+</record_update>]]></payload>
+        <payload_hash>-493060282</payload_hash>
+        <record_name>Certificate Details</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:28</sys_created_on>
+        <sys_id>4039dbf29352ea50c7667a5efaba103a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446a150000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:28</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>4c39dbf26c52ea504a990a4e47864739</update_guid>
+        <update_guid_history>4c39dbf26c52ea504a990a4e47864739:0,37b857b26d52ea5015c28da1222cf3d2:-1264277633,1c508be623da6a502cc5ef7032a43541:0,82ffb6a66dda6a507e51d2b461259ace:31902824,cec3a92634166a5085784e8c1bf2f440:756665954,9583e92600166a50267fe2599aab550f:-373049801,f773a926d9166a50b347ee565f7fcc79:1368491286</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Certificate Details">aa5d770893a26210c7667a5efaba1022</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 21:53:52</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>8f128dde0dae4078b0795f6828c242d1</sys_id>
+        <sys_metadata>bf73a92693166a50c7667a5efaba1077</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Certificate Details</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_instance_table_bf73a92693166a50c7667a5efaba1077</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_bf73a92693166a50c7667a5efaba1077">4039dbf29352ea50c7667a5efaba103a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 21:53:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.custom-header {
+  /* Blue gradient background */
+  background: linear-gradient(90deg, #0052cc 0%, #007fff 100%);
+  color: #fff; /* White text */
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin: 32px auto 24px auto;
+  max-width: 1100px;
+}
+
+.custom-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #fff; /* Ensure white text for h1 */
+}
+
+.custom-header p {
+  font-size: 1rem;
+  margin-top: 5px;
+  opacity: 0.9;
+  color: #e6f0fa; /* Slightly lighter white for contrast */
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>request_page_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Request Page Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.title = "Request Automation";
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 00:33:56</sys_created_on>
+        <sys_id>709b256893eea210c7667a5efaba1066</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Request Page Header</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_709b256893eea210c7667a5efaba1066</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 06:47:13</sys_updated_on>
+        <template><![CDATA[<div class="custom-header">
+  <h1>{{::data.title}}</h1>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>709b256893eea210c7667a5efaba1066</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 00:33:56</sys_created_on>
+        <sys_id>3c9b256893eea210c7667a5efaba1068</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 00:33:56</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

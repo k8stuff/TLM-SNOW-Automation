@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.StartRenewalFlow</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>StartRenewalFlow</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var StartRenewalFlow = Class.create();
+StartRenewalFlow.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+  isPublic: function () {
+    return true;
+  },
+
+  ajaxFunction_startFlow: function () {
+    gs.info('[StartRenewalFlow] Current scope: ' + gs.getCurrentScopeName());
+
+    var commonName = this.getParameter('sysparm_common_name');
+    var tags = this.getParameter('sysparm_tags');
+    var department = this.getParameter('sysparm_department');
+    var certificateID = this.getParameter('sysparm_certificate_id');
+	var inventoryID = this.getParameter('sysparm_inventory_id');
+	var profileID = this.getParameter('sysparm_profile_id');
+
+    gs.info('[StartRenewalFlow] Params → CN: ' + commonName + ', Tags: ' + tags + ', Dept: ' + department);
+
+    var gr = new GlideRecord('x_1586600_test_sno_automation_table');
+    gr.initialize();
+    gr.common_name = commonName;
+    gr.tags = tags;
+    gr.department = department;
+    gr.certificate_id = certificateID;
+    gr.inventory_id = inventoryID;
+    gr.profile_id = profileID;
+
+    // ]]>🧑<![CDATA[ Set requested_for to current user
+	var requestedForID = gs.getUserID(); // This gets the sys_id of the currently logged-in user
+    gs.info("User ID: " + requestedForID);
+    gr.requested_for = requestedForID;
+    gs.info("Requested For ID: " + gr.requested_for);
+
+    // ]]>👔<![CDATA[ Set approver to manager of requested_for
+    var userGR = new GlideRecord('sys_user');
+    if (userGR.get(requestedForID)) {
+      var managerSysId = userGR.getValue('manager'); // Get the manager's sys_id
+      if (managerSysId) {
+        gr.approver = managerSysId; // Assuming 'approver' is a reference field to sys_user
+        gs.info('[StartRenewalFlow] Approver set to manager sys_id: ' + managerSysId);
+      } else {
+        gs.warn('[StartRenewalFlow] No manager found for requested_for user: ' + requestedForID);
+        // You might want to set a default approver or handle this error
+      }
+    }
+
+    var sysId = gr.insert();
+    if (sysId) {
+      gs.info('[StartRenewalFlow] Insert successful → sys_id: ' + sysId);
+      try {
+        sn_fd.FlowAPI.startFlow('demo_workflow', gr);
+        gs.info('[StartRenewalFlow] Flow triggered for sys_id: ' + sysId);
+        return "Renewal request successfully triggered.";
+      } catch (e) {
+        gs.error('[StartRenewalFlow] FlowAPI Error: ' + e.message);
+        return 'Record created but flow trigger failed: "' + e.message + '"';
+      }
+    }
+
+    gs.error('[StartRenewalFlow] Insert failed');
+    return "Failed to trigger renewal request.";
+  }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-09 18:02:02</sys_created_on>
+        <sys_id>274ed50b8362e2106982fe55eeaad348</sys_id>
+        <sys_mod_count>48</sys_mod_count>
+        <sys_name>StartRenewalFlow</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_274ed50b8362e2106982fe55eeaad348</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-23 21:20:39</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>274ed50b8362e2106982fe55eeaad348</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-09 18:02:02</sys_created_on>
+        <sys_id>9a9ed50b8362e2106982fe55eeaad34f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-09 18:02:02</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.CreateLifecycleAutomationEvent</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>After user clicks submit on request automation page and Automation Event record is created, using the cert_id pull all the necessary data for the json body of the "Create LifeCycle Automation Event" API Call and run the call.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>CreateLifecycleAutomationEvent</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CreateLifecycleAutomationEvent = Class.create();
+CreateLifecycleAutomationEvent.prototype = {
+  initialize: function () {},
+
+  triggerAutomation: function (certId) {
+    if (typeof certId === 'object') {
+      gs.error('[CreateLifecycleAutomationEvent] Invalid certId object: ' + certId);
+      return 'Invalid certId input';
+    }
+
+    gs.info('[DEBUG] [CreateLifecycleAutomationEvent] Triggering automation with certId: ' + certId);
+
+    if (!certId) {
+      gs.error('[ERROR] [CreateLifecycleAutomationEvent] Missing certificate ID');
+      return 'Missing certificate ID';
+    }
+
+    // Retrieve dynamic config
+    var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+    var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+
+    if (!accountId || !apiKey) {
+      gs.error('[CreateLifecycleAutomationEvent] Missing system properties. Aborting call.');
+      return 'ERROR: Missing DC1 system properties.';
+    }
+
+    // Lookup from Automation Table
+    var autoGR = new GlideRecord('x_1586600_test_sno_automation_table');
+    autoGR.addQuery('certificate_id', certId);
+    autoGR.query();
+
+    if (!autoGR.next()) {
+      gs.error('[ERROR] [CreateLifecycleAutomationEvent] Certificate not found for ID: ' + certId);
+      return 'Certificate not found for ID: ' + certId;
+    }
+
+    var commonName = autoGR.getValue('common_name');
+    if (!commonName) {
+      gs.error('[ERROR] [CreateLifecycleAutomationEvent] Common Name is missing or empty for certificate ID: ' + certId);
+      return 'Invalid common name for certificate ID: ' + certId;
+    }
+
+	var inventoryID = autoGR.getValue('inventory_id');
+    if (!inventoryID) {
+      gs.error('[ERROR] [CreateLifecycleAutomationEvent] Inventory ID is missing or empty for certificate ID: ' + certId);
+      return 'Invalid Inventory ID for certificate ID: ' + certId;
+    }
+
+	var profileID = autoGR.getValue('profile_id');
+    if (!profileID) {
+      gs.error('[ERROR] [CreateLifecycleAutomationEvent] Profile ID is missing or empty for certificate ID: ' + certId);
+      return 'Invalid Profile ID for certificate ID: ' + certId;
+    }
+
+    var tags = autoGR.getValue('tags');
+    var tagsArray = [];
+
+    try {
+      tagsArray = JSON.parse(tags);
+      if (!Array.isArray(tagsArray)) {
+        tagsArray = [tags];
+      }
+    } catch (e) {
+      tagsArray = [tags];
+    }
+
+    // --- ✅ Construct Payload ---
+    var payload = {
+      action_type: "TRANSFER", // Change to "ENROLL" if needed
+      cn: commonName,
+      account_id: accountId,  // ✅ Replaced hardcoded ID
+      auto_renew_settings: {
+        auto_renew_certificate_and_order: false,
+        before_expiration: false
+      },
+      automation_id: inventoryID, // ✅ Replaced hardcoded ID
+      custom_attributes_field: [],
+      post_script: {},
+      pre_script: {},
+      profile_id: profileID, // ✅ Replaced hardcoded ID
+      run_now: true,
+      sans: [commonName],
+      tags: tagsArray
+    };
+
+    gs.info('[DEBUG] [CreateLifecycleAutomationEvent] Payload to DigiCert:\n' + JSON.stringify(payload, null, 2));
+
+    // --- ✅ Send Request ---
+    var request = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Create LifeCycle Automation Event');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('x-api-key', apiKey);  // ✅ Dynamically injected
+    request.setRequestBody(JSON.stringify(payload));
+
+    try {
+      var response = request.execute();
+      var status = response.getStatusCode();
+      var body = response.getBody();
+
+      gs.info('[CreateLifecycleAutomationEvent] Response HTTP Status: ' + status);
+      gs.info('[CreateLifecycleAutomationEvent] Response Body: ' + body);
+
+      return 'SUCCESS: DigiCert Lifecycle Event Triggered - Status: ' + status;
+    } catch (ex) {
+      var message = ex.getMessage();
+      gs.error('[CreateLifecycleAutomationEvent] REST call failed: ' + message);
+      return 'ERROR: ' + message;
+    }
+  },
+
+  type: 'CreateLifecycleAutomationEvent'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-10 19:09:31</sys_created_on>
+        <sys_id>3647361f83aa26106982fe55eeaad3c8</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>CreateLifecycleAutomationEvent</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_3647361f83aa26106982fe55eeaad3c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 04:27:21</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3647361f83aa26106982fe55eeaad3c8</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-10 19:09:31</sys_created_on>
+        <sys_id>a0a7761f83aa26106982fe55eeaad308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-10 19:09:31</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

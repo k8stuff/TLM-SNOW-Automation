@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="x_1586600_test_sno_automation_table">x_1586600_test_sno_automation_table</category>
+        <maximum_digits>3</maximum_digits>
+        <number>100</number>
+        <prefix/>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 20:31:44</sys_created_on>
+        <sys_id>7e3df53c93262610c7667a5efaba101d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_number_7e3df53c93262610c7667a5efaba101d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 20:41:12</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sys_number_7e3df53c93262610c7667a5efaba101d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="x_1586600_test_sno_automation_table">x_1586600_test_sno_automation_table</category><maximum_digits>3</maximum_digits><number>100</number><prefix/><sys_class_name>sys_number</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 20:31:44</sys_created_on><sys_id>7e3df53c93262610c7667a5efaba101d</sys_id><sys_mod_count>3</sys_mod_count><sys_name/><sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package><sys_policy/><sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope><sys_update_name>sys_number_7e3df53c93262610c7667a5efaba101d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 20:41:12</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>-718790862</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>eb395f729352ea50c7667a5efaba1077</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 20:41:12</sys_created_on>
+        <sys_id>61efb5bc93262610c7667a5efaba10a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ccdf41c20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 20:41:12</sys_updated_on>
+        <type>Number</type>
+        <update_guid>e5efb5bc862626101ab4bcb5735917a7</update_guid>
+        <update_guid_history>e5efb5bc862626101ab4bcb5735917a7:-718790862,a3df71306466261056d90b7f5e9d3f51:2033683109,c81e797c6726261069ccfa5788c2ca82:1690799300,0fbd317c24262610aa36be93f8c4f0c3:-836427631</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-07 20:32:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>7c75b04649694fda9204053ff048d309</sys_id>
+        <sys_metadata>7e3df53c93262610c7667a5efaba101d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent display_value="Automation_Table">53118b08936e2210c7667a5efaba1063</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sys_number_7e3df53c93262610c7667a5efaba101d</sys_update_name>
+        <sys_update_version display_value="sys_number_7e3df53c93262610c7667a5efaba101d">61efb5bc93262610c7667a5efaba10a8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-07 20:32:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

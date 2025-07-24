@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="ip_port" label="IP:Port" language="en" table="x_1586600_test_sno_endpoint_table">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>ip_port</element>
+            <help/>
+            <hint/>
+            <label>IP:Port</label>
+            <language>en</language>
+            <name>x_1586600_test_sno_endpoint_table</name>
+            <plural>IP:Ports</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-06-24 18:57:15</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>IP:Port</sys_name>
+            <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+            <sys_update_name>sys_documentation_x_1586600_test_sno_endpoint_table_ip_port_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-06-24 18:57:15</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>x-api-key</name>
+        <rest_message_function display_value="Endpoint Discovery - Unsecured">5c6a512a831222106982fe55eeaad38a</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 18:13:21</sys_created_on>
+        <sys_id>5c6ad9e6831222106982fe55eeaad3ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x-api-key</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_5c6ad9e6831222106982fe55eeaad3ab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 18:13:21</sys_updated_on>
+        <value>01e8d6cb7f6d0fb840dded3fe9_74ea0882b69db9985a389af144431e19f0b14b7ffbf2049bee9348af6db7c79e</value>
+    </sys_rest_message_fn_headers>
+</record_update>

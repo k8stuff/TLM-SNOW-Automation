@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function submitSetup() {
+  var accountIdElem = document.getElementById("account_id");
+  var apiKeyElem = document.getElementById("api_key");
+
+  if (!accountIdElem || !apiKeyElem) {
+    console.error("Missing input elements.");
+    return;
+  }
+
+  var accountId = accountIdElem.value.trim();
+  var apiKey = apiKeyElem.value.trim();
+
+  if (!accountId || !apiKey) {
+    document.getElementById("status").innerHTML = "<p style='color:red;'>Both fields are required.</p>";
+    return;
+  }
+
+  // Step 1: Save credentials
+  var ga = new GlideAjax('DC1SetupHandler');
+  ga.addParam('sysparm_name', 'saveDC1Credentials');
+  ga.addParam('sysparm_account_id', accountId);
+  ga.addParam('sysparm_api_key', apiKey);
+
+  ga.getXMLAnswer(function(response) {
+    if (response && response.startsWith("success")) {
+
+      // Step 2: Immediately verify system property update
+      var verify = new GlideAjax('DC1SetupHandler');
+      verify.addParam('sysparm_name', 'verifyDC1Credentials');
+      verify.getXMLAnswer(function(verifyResp) {
+        if (verifyResp === "verified") {
+          document.getElementById("status").innerHTML = "<p style='color:green;'>Credentials saved and verified! Redirecting...</p>";
+          setTimeout(function() {
+            window.location.href = '/your_endpoint_dashboard_page.do'; // ✅ TODO: Replace with your landing page
+          }, 1500);
+        } else {
+          document.getElementById("status").innerHTML = "<p style='color:orange;'>Saved, but verification failed. Check logs.</p>";
+          console.warn("Verification failed: Properties may not have been saved.");
+        }
+      });
+
+    } else {
+      document.getElementById("status").innerHTML = "<p style='color:red;'>Error saving credentials. Contact your admin.</p>";
+      console.error("GlideAjax save error response:", response);
+    }
+  });
+}
+]]></client_script>
+        <description>Setup Page where customer inputs their DC1 Account ID &amp; Service User API Key to allow api calls to go through.</description>
+        <direct>true</direct>
+        <endpoint>x_1586600_test_sno_.do</endpoint>
+        <html><![CDATA[<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide">
+  <h2>DigiCert One Initial Setup</h2>
+  <p>Please enter your DC1 credentials to configure the application.</p>
+
+  <label>DC1 Account ID:</label><br />
+  <input type="text" id="account_id" style="width: 400px;" /><br /><br />
+
+  <label>Service User API Key:</label><br />
+  <input type="password" id="api_key" style="width: 400px;" /><br /><br />
+
+  <button onclick="submitSetup()">Save and Continue</button>
+
+  <div id="status" style="margin-top: 20px;"></div>
+
+  <!-- SCRIPT MUST BE INSIDE THE JELLY BLOCK -->
+  <script>
+    function submitSetup() {
+      var accountIdElem = document.getElementById("account_id");
+      var apiKeyElem = document.getElementById("api_key");
+
+      if (!accountIdElem || !apiKeyElem) {
+        console.error("Missing input elements.");
+        return;
+      }
+
+      var accountId = accountIdElem.value.trim();
+      var apiKey = apiKeyElem.value.trim();
+
+      if (!accountId || !apiKey) {
+        document.getElementById("status").innerHTML = "&lt;p style='color:red;'&gt;Both fields are required.&lt;/p&gt;";
+        return;
+      }
+
+      var ga = new GlideAjax('DC1SetupHandler');
+      ga.addParam('sysparm_name', 'saveDC1Credentials');
+      ga.addParam('sysparm_account_id', accountId);
+      ga.addParam('sysparm_api_key', apiKey);
+
+      ga.getXMLAnswer(function(response) {
+        console.log("saveDC1Credentials response:", response);
+
+        if (response &amp;&amp; response.startsWith("success")) {
+          var verify = new GlideAjax('DC1SetupHandler');
+          verify.addParam('sysparm_name', 'verifyDC1Credentials');
+          verify.getXMLAnswer(function(verifyResp) {
+            console.log("verifyDC1Credentials response:", verifyResp);
+            if (verifyResp === "verified") {
+              document.getElementById("status").innerHTML = "&lt;p style='color:green;'&gt;Credentials saved and verified! Redirecting...&lt;/p&gt;";
+              setTimeout(function() {
+                window.location.href = '/your_endpoint_dashboard_page.do';
+              }, 1500);
+            } else {
+              document.getElementById("status").innerHTML = "&lt;p style='color:orange;'&gt;Saved, but verification failed. Check logs.&lt;/p&gt;";
+            }
+          });
+        } else {
+          document.getElementById("status").innerHTML = "&lt;p style='color:red;'&gt;Error saving credentials. Contact your admin.&lt;/p&gt;";
+        }
+      });
+    }
+  </script>
+</j:jelly>
+]]></html>
+        <name/>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 21:15:48</sys_created_on>
+        <sys_id>ddcdce9d833222106982fe55eeaad3cb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_ui_page_ddcdce9d833222106982fe55eeaad3cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 21:30:16</sys_updated_on>
+    </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ddcdce9d833222106982fe55eeaad3cb</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 21:15:47</sys_created_on>
+        <sys_id>b41e4ed9833222106982fe55eeaad345</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-16 21:15:47</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

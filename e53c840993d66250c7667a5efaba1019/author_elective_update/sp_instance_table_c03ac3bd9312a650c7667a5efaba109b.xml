@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list/>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>10</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">1b1a4bbd9312a650c7667a5efaba10b6</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 18:24:00</sys_created_on>
+        <sys_id>c03ac3bd9312a650c7667a5efaba109b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_instance_table_c03ac3bd9312a650c7667a5efaba109b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 05:27:58</sys_updated_on>
+        <table>x_1586600_test_sno_automation_event</table>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="DELETE" query="documentkey=c03ac3bd9312a650c7667a5efaba109b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_instance_table_c03ac3bd9312a650c7667a5efaba109b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table"><sp_instance_table action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><display_field/><field_list/><filter/><glyph/><id/><maximum_entries>10</maximum_entries><order>1</order><order_by/><order_direction>asc</order_direction><roles/><short_description/><size>md</size><sp_column display_value="1">1b1a4bbd9312a650c7667a5efaba10b6</sp_column><sp_page/><sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget><sys_class_name>sp_instance_table</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-23 18:24:00</sys_created_on><sys_id>c03ac3bd9312a650c7667a5efaba109b</sys_id><sys_mod_count>2</sys_mod_count><sys_name/><sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package><sys_policy/><sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope><sys_update_name>sp_instance_table_c03ac3bd9312a650c7667a5efaba109b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-30 05:27:58</sys_updated_on><table>x_1586600_test_sno_automation_event</table><title/><url/><widget_parameters/></sp_instance_table><sys_translated_text action="delete_multiple" query="documentkey=c03ac3bd9312a650c7667a5efaba109b"/></record_update>]]></payload>
+        <payload_hash>-2117538972</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>eb395f729352ea50c7667a5efaba1077</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 05:27:58</sys_created_on>
+        <sys_id>28bb18cc93222210c7667a5efaba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197bf4e6fb30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 05:27:58</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>acbb18ccb22222100e8538ec78252bf1</update_guid>
+        <update_guid_history>acbb18ccb22222100e8538ec78252bf1:-2117538972,55ab1c48ad222210b688274f9350b92f:1295467322,cc39dbf22052ea50657c422845b68e3b:0,71c81bb28152ea506e903f3722ad31df:-1962861249,ac508be603da6a50e304b8afd7e31e43:0,fbff7aa699da6a50b71713ec512b593d:-1480735547,b8355cce8896a650eae49747fe89c0a3:0,22741c8e9296a650b283ccaef8b70986:-1328986186,f782948ade96a650cda8d221fdec5d08:0,e9af4846ca96a6507699d05d907bf6a1:930728293,0c3ac3bd1212a650bc421fcc6009059c:-888892980</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">00ad908093622210c7667a5efaba1075</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 05:36:23</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>096a29a703c24c788071717f1a01f551</sys_id>
+        <sys_metadata>c03ac3bd9312a650c7667a5efaba109b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_instance_table_c03ac3bd9312a650c7667a5efaba109b</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_c03ac3bd9312a650c7667a5efaba109b">28bb18cc93222210c7667a5efaba10f2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 05:36:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

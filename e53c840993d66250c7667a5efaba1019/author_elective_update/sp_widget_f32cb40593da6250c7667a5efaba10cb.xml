@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>test_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Test Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 00:08:08</sys_created_on>
+        <sys_id>f32cb40593da6250c7667a5efaba10cb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Test Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_f32cb40593da6250c7667a5efaba10cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 00:11:47</sys_updated_on>
+        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>f32cb40593da6250c7667a5efaba10cb</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 00:08:08</sys_created_on>
+        <sys_id>732cb40593da6250c7667a5efaba10d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 00:08:08</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_widget_f32cb40593da6250c7667a5efaba10cb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css/&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;false&lt;/has_preview&gt;
+        &lt;id&gt;test_widget&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;
+        &lt;name&gt;Test Widget&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-21 00:08:08&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;f32cb40593da6250c7667a5efaba10cb&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Test Widget&lt;/sys_name&gt;
+        &lt;sys_package display_value="Test Snow Automation " source="x_1586600_test_sno"&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Test Snow Automation "&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_f32cb40593da6250c7667a5efaba10cb&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-21 00:11:47&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div&gt;&lt;!-- your widget template --&gt;&lt;/div&gt;]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+    &lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;
+        &lt;id&gt;f32cb40593da6250c7667a5efaba10cb&lt;/id&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-21 00:08:08&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;732cb40593da6250c7667a5efaba10d0&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-21 00:08:08&lt;/sys_updated_on&gt;
+        &lt;table&gt;sp_widget&lt;/table&gt;
+        &lt;use_es_latest&gt;true&lt;/use_es_latest&gt;
+    &lt;/sys_es_latest_script&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>481642590</payload_hash>
+        <record_name>Test Widget</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:29</sys_created_on>
+        <sys_id>1839dbf29352ea50c7667a5efaba1095</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446e410000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:29</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>1439dbf24f52ea50637d1bc2e7249795</update_guid>
+        <update_guid_history>1439dbf24f52ea50637d1bc2e7249795:0,24d8dbb2d552ea5040257b3a9f3b2fed:-996227188,f4508be63ada6a503f944aeee550ea9d:0,52000fa62dda6a50f01f6a4500c29ccd:-1807297519,f8355cce9a96a65001fe6a7e209184f4:0,ef745c8eb196a65008cb8f74951eb1c7:-2104521861,dc92948aad96a650a8d3615d0c380ebf:0,eeafc846a196a6508eb9d3a26ae2ff61:2025480443,4d0dbc0147da6250dd630424e7953320:1281214310,ff2cb405c4da62504f9784bbabb13fce:679423275</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Test Widget">d1deff4893a26210c7667a5efaba10c5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:00:21</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>0b96671fec26402494d737fa70b5de10</sys_id>
+        <sys_metadata>f32cb40593da6250c7667a5efaba10cb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_widget_f32cb40593da6250c7667a5efaba10cb</sys_update_name>
+        <sys_update_version display_value="sp_widget_f32cb40593da6250c7667a5efaba10cb">1839dbf29352ea50c7667a5efaba1095</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 22:00:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

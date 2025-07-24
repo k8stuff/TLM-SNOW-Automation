@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $http) {
+  const c = this;
+
+  console.log("]]>🟦<![CDATA[ Client script started");
+
+  c.data.rows = [];
+  c.data.agentNames = [];
+  c.originalRows = [];
+
+  // Fetch data from server
+  c.server.get().then(function(response) {
+    console.log("]]>🟩<![CDATA[ Server response:", response);
+
+    c.originalRows = response.data.rows || [];
+    c.data.rows = [...c.originalRows];
+
+    // ✅ Bind agent names to dropdown
+    c.data.agentNames = response.data.agentNames || [];
+    console.log("✅ Agent names received:", c.data.agentNames);
+  });
+
+  // Dropdown filter handler
+  c.filterByAgent = function() {
+    console.log("]]>🔹<![CDATA[ Filter triggered. Selected agent:", c.selectedAgent);
+
+    if (!c.selectedAgent) {
+      console.log("]]>🔸<![CDATA[ No agent selected, restoring full list");
+      c.data.rows = [...c.originalRows];
+    } else {
+      c.data.rows = c.originalRows.filter(row =>
+        row.agent_name === c.selectedAgent
+      );
+      console.log(`]]>🔸<![CDATA[ Filtered row count: ${c.data.rows.length}`);
+    }
+  };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.endpoint-panel {
+  background: #fff;
+  border-radius: 36px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 45px 34px;
+  margin: 32px auto;
+  max-width: 2600px; /* Increased from 2000px */
+  width: 100%;       /* Optional: make it as wide as the parent allows */
+  border: 1px solid #e0e0e0;
+  font-size: 1.5rem;
+}
+
+.endpoint-panel-parent, /* If you have a parent wrapper */
+.container, .container-fluid, .sp-page-row, .sp-page-column {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.gradient-btn {
+  background: linear-gradient(90deg, #0052cc 0%, #00c6ff 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  outline: none;
+}
+
+.gradient-btn:hover, .gradient-btn:focus {
+  background: linear-gradient(90deg, #007fff 0%, #0052cc 100%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.03);
+  color: #fff;
+}
+
+.automation-status-badge {
+  display: inline-block;
+  padding: 6px 24px;
+  border-radius: 999px; /* pill shape */
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.08);
+  border: none;
+  text-align: center;
+  min-width: 70px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>endpoint_portal_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Endpoint Portal Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.rows = [];
+  const agentSet = new Set();
+
+  // ]]>🔹<![CDATA[ Pull endpoint data from ServiceNow table
+  var gr = new GlideRecord('x_1586600_test_sno_endpoint_table');
+  if (gr.isValid()) {
+    gr.query();
+    while (gr.next()) {
+      // Fallback to host_name if agent_name is missing
+      var agent = gr.getValue('agent_name') || gr.getValue('host_name') || '';
+
+      data.rows.push({
+        sys_id: gr.getValue('sys_id'),
+        endpoint_location: gr.getValue('endpoint_location'),
+        host_name: gr.getValue('host_name'),
+        common_name: gr.getValue('common_name'),
+        valid_to: gr.getValue('valid_to'),
+				valid_from: gr.getValue('valid_from'),
+        application: gr.getValue('application'),
+        automation_status: gr.getValue('automation_status'),
+				days_left: gr.getValue('days_left'),
+        agent_name: agent
+      });
+
+      if (agent) agentSet.add(agent);
+    }
+  } else {
+    gs.error("]]>🚨<![CDATA[ Table x_1586600_test_sno_endpoint_table not found.");
+  }
+
+  // Optionally also get agent names from DigiCert API (if needed)
+  try {
+    var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+    var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+
+    if (!accountId || !apiKey) {
+      gs.warn("⚠️ Missing DigiCert API credentials.");
+    } else {
+      var r = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Endpoint Discovery - Secured');
+      var accountParam = encodeURIComponent(JSON.stringify({ id: accountId }));
+      r.setStringParameterNoEscape('account_encoded', accountParam);
+      r.setStringParameterNoEscape('offset', '0');
+      r.setRequestHeader("x-api-key", apiKey);
+
+      var response = r.execute();
+      var body = response.getBody();
+      var parsed = JSON.parse(body);
+
+      if (parsed?.items?.length > 0) {
+        parsed.items.forEach(function(item) {
+          var name = item.agent_name || item.connector || item.hostname;
+          if (name) agentSet.add(name);
+        });
+      } else {
+        gs.info("ℹ️ No agents returned from DigiCert.");
+      }
+    }
+  } catch (ex) {
+    gs.error("❌ DigiCert API error: " + ex.message);
+  }
+
+  data.agentNames = Array.from(agentSet);
+  gs.info("✅ Final agentNames sent to client: " + JSON.stringify(data.agentNames));
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 00:11:20</sys_created_on>
+        <sys_id>8e662d6093eea210c7667a5efaba1065</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>Endpoint Portal Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_8e662d6093eea210c7667a5efaba1065</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 05:11:58</sys_updated_on>
+        <template><![CDATA[<div style="margin-bottom: 15px;">
+  <label for="agentFilter" style="font-weight: bold;">System:</label>
+  <select id="agentFilter"
+          class="form-control"
+          style="width: auto; display: inline-block;"
+          ng-model="c.selectedAgent"
+          ng-change="c.filterByAgent()">
+    <option value="">All Systems</option>
+    <option ng-repeat="agent in c.data.agentNames" value="{{agent}}">{{agent}}</option>
+  </select>
+</div>
+
+<div class="endpoint-panel">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>System</th>
+        <th>Endpoint Location</th>
+        <th>Host Name</th>
+        <th>Common Name</th>
+        <th>Expires in Days</th>
+        <th>Valid From</th>
+        <th>Valid To</th>
+        <th>Application</th>
+        <th>Automation Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in c.data.rows">
+        <td>{{row.agent_name}}</td>
+        <td>
+          <a href="?id=endpoint_certificate_details_page&sys_id={{row.sys_id}}">
+            {{row.endpoint_location}}
+          </a>
+        </td>    
+        <td>{{row.host_name}}</td>
+        <td>{{row.common_name}}</td>
+        <td>{{row.days_left}}</td>
+        <td>{{row.valid_from | date:'yyyy-MM-dd'}}</td>
+  			<td>{{row.valid_to | date:'yyyy-MM-dd'}}</td>
+        <td>{{row.application}}</td>
+        <td>
+          <span class="automation-status-badge">
+            {{row.automation_status}}
+          </span>
+        </td>        
+        <td>
+          <a class="btn gradient-btn"
+   					href="?id=request_page_for_automation&sys_id={{row.sys_id}}">
+  						Renew
+					</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>8e662d6093eea210c7667a5efaba1065</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 00:11:20</sys_created_on>
+        <sys_id>0e662d6093eea210c7667a5efaba1069</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 00:11:20</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

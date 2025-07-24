@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <max_drift/>
+        <name>Populate Certificate_Details Table</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2025-06-26 22:26:44</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[(function execute() {
+    // == SECURED ENDPOINTS ==
+    var rSecured = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Endpoint Discovery - Secured');
+    var responseSecured = rSecured.execute();
+    var responseBodySecured = responseSecured.getBody();
+    gs.info("FUNCTION SECURED RESPONSE: " + responseBodySecured);
+    // Parse the JSON response
+    var securedJSON = JSON.parse(responseBodySecured);
+    // Loop through each item and print the certificate_id
+    if (securedJSON.items && securedJSON.items.length > 0) {
+        securedJSON.items.forEach(function(item) {
+            var certificateId = item.certificate_id || 'N/A';
+            gs.info("Certificate ID: " + certificateId);
+            // == CERTIFICATE DETAILS BY ID ==
+            var rDetails = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Certificate Details by ID');
+            rDetails.setStringParameter('certificate_id', certificateId);
+            var responseDetails = rDetails.execute();
+            var responseBodyDetails = responseDetails.getBody();
+            gs.info("Certificate Details Response: " + responseBodyDetails);
+            try {
+                var detailsJSON = JSON.parse(responseBodyDetails);
+                // == Extract and prepare data ==
+                // Certificate Owners (join all owners)
+                var owners = [];
+                if (detailsJSON.certificate_owners_details && detailsJSON.certificate_owners_details.length > 0) {
+                    detailsJSON.certificate_owners_details.forEach(function(owner) {
+                        owners.push(owner.first_name + ' ' + owner.last_name + ' (' + owner.email + ')');
+                    });
+                }
+                var ownersString = owners.join('; ');
+                // SANS: Get from attributes.san.dns_name (may be a stringified JSON)
+                var sans = [];
+                if (detailsJSON.attributes && typeof detailsJSON.attributes === 'string') {
+                    try {
+                        var attrs = JSON.parse(detailsJSON.attributes);
+                        if (attrs.san && attrs.san.dns_name) sans = attrs.san.dns_name;
+                    } catch(e) {
+                        gs.warn("Could not parse attributes as JSON: " + e.message);
+                    }
+                } else if (detailsJSON.attributes && detailsJSON.attributes.san && detailsJSON.attributes.san.dns_name) {
+                    sans = detailsJSON.attributes.san.dns_name;
+                }
+                var sansString = sans.join(', ');
+                // Tags: join array
+                var tagsString = detailsJSON.tags ? detailsJSON.tags.join(', ') : '';
+                // == Update or Insert the Certificate_Details table ==
+                var gr = new GlideRecord('x_1586600_test_sno_certificate_details');
+                // Query for existing record by certificate_id
+                gr.addQuery('certificate_id', detailsJSON.id);
+                gr.query();
+                if (gr.next()) {
+                    gs.info("Updating existing certificate details for " + detailsJSON.common_name);
+                } else {
+                    gr.initialize();
+                    gs.info("Inserting new certificate details for " + detailsJSON.common_name);
+                }
+                // Set all fields
+                // Endpoint ID: Not in response, leave blank or set to item.sys_id if you have it
+                // gr.endpoint_id = item.sys_id; // Example, if you have this
+                // Department: Use business_unit.name if available
+                gr.department = detailsJSON.business_unit ? detailsJSON.business_unit.name : '';
+                // Current Certificate: Not in response, set to true
+                gr.current_certificate = true;
+                // Validity To
+                gr.validity_to = detailsJSON.valid_to;
+                // Tags
+                gr.tags = tagsString;
+                // Order ID: Not in response, but you can use enrollment.id as string
+                gr.order_id = detailsJSON.enrollment ? detailsJSON.enrollment.id : '';
+                // SANS
+                gr.sans = sansString;
+                // Serial Number
+                gr.serial_number = detailsJSON.serial_number;
+                // Status
+                gr.status = detailsJSON.status;
+                // Common Name
+                gr.common_name = detailsJSON.common_name;
+                // Certificate ID
+                gr.certificate_id = detailsJSON.id;
+                // Validity From
+                gr.validity_from = detailsJSON.valid_from;
+                // Certificate Owners
+                gr.certificate_owners = ownersString;
+                // Save the record (insert or update)
+                var result = gr.update() || gr.insert();
+                if (result) {
+                    gs.info("Successfully saved certificate details for " + detailsJSON.common_name);
+                } else {
+                    gs.error("Failed to save certificate details for " + detailsJSON.common_name);
+                }
+            } catch (e) {
+                gs.error("Failed to process certificate details: " + e.message);
+            }
+        });
+    } else {
+        gs.info("No secured endpoints found.");
+    }
+})();]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:27:18</sys_created_on>
+        <sys_id>308e53ba9352ea50c7667a5efaba1059</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Populate Certificate_Details Table</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sysauto_script_308e53ba9352ea50c7667a5efaba1059</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-03 01:30:42</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

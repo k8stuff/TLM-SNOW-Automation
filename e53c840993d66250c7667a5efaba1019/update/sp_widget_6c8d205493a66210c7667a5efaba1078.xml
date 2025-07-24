@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.endpoint-panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin: 32px auto;
+  max-width: 1100px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.5rem;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>certificate_details_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Certificate Details Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var endpointSysId = $sp.getParameter('sys_id');
+    data.hasData = false;
+    gs.info('Endpoint sys_id: ' + endpointSysId);
+
+    if (endpointSysId) {
+        var eventsGR = new GlideRecord('x_1586600_test_sno_endpoint_table');
+        if (eventsGR.get(endpointSysId)) {
+            gs.info('Found automation record for sys_id: ' + endpointSysId);
+            var certId = eventsGR.getValue('certificate_id');
+            gs.info('Certificate ID from automation record: ' + certId);
+
+            var certGR = new GlideRecord('x_1586600_test_sno_certificate_details');
+            certGR.addQuery('certificate_id', certId); // Query by the certificate_id field
+            certGR.query();
+            if (certGR.next()) {
+                gs.info('Found certificate details for certId: ' + certId);
+                data.certificate_id      = certGR.getValue('number');
+                data.endpoint_id         = eventsGR.getValue('number');
+                data.current_certificate = certGR.getValue('certificate_id');
+                data.common_name         = certGR.getValue('common_name');
+                data.serial_number       = certGR.getValue('serial_number');
+                data.validity_to         = certGR.getValue('validity_to');
+                data.validity_from       = certGR.getValue('validity_from');
+                data.status              = certGR.getValue('status');
+                data.sans                = certGR.getValue('sans');
+                data.certificate_owners  = certGR.getValue('certificate_owners');
+                data.tags                = certGR.getValue('tags');
+                data.department          = certGR.getValue('department');
+                data.hasData = true;
+            } else {
+                gs.info('No certificate details found for certId: ' + certId);
+            }
+        } else {
+            gs.info('No automation record found for sys_id: ' + endpointSysId);
+        }
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 01:24:16</sys_created_on>
+        <sys_id>6c8d205493a66210c7667a5efaba1078</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Certificate Details Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_6c8d205493a66210c7667a5efaba1078</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 05:47:25</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.hasData">
+  <div class = "endpoint-panel">
+    <h3>Certificate Details</h3>
+  	<table class="table">
+    	<tr><th>Certificate ID</th><td>{{data.current_certificate}}</td></tr>
+    	<tr><th>Common Name</th><td>{{data.common_name}}</td></tr>
+    	<tr><th>Serial Number</th><td>{{data.serial_number}}</td></tr>
+    	<tr><th>Validity To</th><td>{{data.validity_to}}</td></tr>
+    	<tr><th>Validity From</th><td>{{data.validity_from}}</td></tr>
+    	<tr><th>Status</th><td>{{data.status}}</td></tr>
+    	<tr><th>SANs</th><td>{{data.sans}}</td></tr>
+    	<tr><th>Certificate Owners</th><td>{{data.certificate_owners}}</td></tr>
+    	<tr><th>Tags</th><td>{{data.tags}}</td></tr>
+    	<tr><th>Department</th><td>{{data.department}}</td></tr>
+  	</table>
+  </div>
+</div>
+<div ng-if="!data.hasData">
+  <p>No certificate data found.</p>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6c8d205493a66210c7667a5efaba1078</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 01:24:16</sys_created_on>
+        <sys_id>288d205493a66210c7667a5efaba107b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 01:24:16</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

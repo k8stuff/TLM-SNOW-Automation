@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>application_and_version,common_name,available_functions,sys_created_on,sys_created_by,endpoint,endpoint_id,endpoint_status,ip_port,sys_id,sys_tags,sys_updated_on,sys_updated_by,sys_mod_count</field_list>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">7fa8e946935ea650c7667a5efaba1036</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 18:42:18</sys_created_on>
+        <sys_id>638125a293166a50c7667a5efaba1030</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Endpoints</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_instance_table_638125a293166a50c7667a5efaba1030</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 18:50:42</sys_updated_on>
+        <table>x_1586600_test_sno_endpoint_table</table>
+        <title>Endpoints</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="DELETE" query="documentkey=638125a293166a50c7667a5efaba1030"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_instance_table_638125a293166a50c7667a5efaba1030</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>application_and_version,common_name,available_functions,sys_created_on,sys_created_by,endpoint,endpoint_id,endpoint_status,ip_port,sys_id,sys_tags,sys_updated_on,sys_updated_by,sys_mod_count</field_list>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">7fa8e946935ea650c7667a5efaba1036</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-25 18:42:18</sys_created_on>
+        <sys_id>638125a293166a50c7667a5efaba1030</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Endpoints</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_instance_table_638125a293166a50c7667a5efaba1030</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-25 18:50:42</sys_updated_on>
+        <table>x_1586600_test_sno_endpoint_table</table>
+        <title>Endpoints</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=638125a293166a50c7667a5efaba1030"/>
+</record_update>]]></payload>
+        <payload_hash>1677994971</payload_hash>
+        <record_name>Endpoints</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:28</sys_created_on>
+        <sys_id>cc39dbf29352ea50c7667a5efaba1037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae4469fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:28</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>c839dbf25e52ea50cc90234621269737</update_guid>
+        <update_guid_history>c839dbf25e52ea50cc90234621269737:0,91c81bb26252ea50ca5b06a78f3efe0b:358355395,58508be642da6a503b58ce6461c2963f:0,9fff3aa6c8da6a50e4515e25aa498a85:-1289807811,a27325a256166a50c111692c16d77a44:-524482717,7bf125a200166a508c0323078ec61ca4:327543905,ab8125a2f7166a501c9a390f4bdeae32:-373049801</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Endpoints">c65df30893a26210c7667a5efaba104a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 21:53:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>4c8f30241b98448c86738e8d5a7571e4</sys_id>
+        <sys_metadata>638125a293166a50c7667a5efaba1030</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Endpoints</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_instance_table_638125a293166a50c7667a5efaba1030</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_638125a293166a50c7667a5efaba1030">cc39dbf29352ea50c7667a5efaba1037</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 21:53:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

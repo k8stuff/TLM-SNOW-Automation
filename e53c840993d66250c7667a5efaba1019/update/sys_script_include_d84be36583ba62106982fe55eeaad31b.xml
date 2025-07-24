@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1586600_test_sno.FilterEndpointsByAgent</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>FilterEndpointsByAgent</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var FilterEndpointsByAgent = Class.create();
+FilterEndpointsByAgent.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+  getEndpoints: function() {
+    var agent = this.getParameter('sysparm_agent') || '';
+    gs.error("]]>🔎<![CDATA[ ScriptInclude - Filtering for agent: " + agent);
+
+    var accountId = gs.getProperty('x_1586600_test_sno.dc1_account_id');
+    var apiKey = gs.getProperty('x_1586600_test_sno.dc1_api_key');
+
+    if (!accountId || !apiKey) {
+      gs.error("❌ Missing DigiCert credentials.");
+      return JSON.stringify([]);
+    }
+
+    var r = new sn_ws.RESTMessageV2('DigiCert_ONE_TLM_API', 'Endpoint Discovery - Secured');
+    var accountParam = encodeURIComponent(JSON.stringify({ id: accountId }));
+
+    r.setStringParameterNoEscape('account_encoded', accountParam);
+    r.setStringParameterNoEscape('offset', '0');
+    if (agent) {
+      r.setStringParameterNoEscape('connector', agent);
+    }
+
+    r.setRequestHeader("Content-Type", "application/json");
+    r.setRequestHeader("x-api-key", apiKey);
+
+    var response = r.execute();
+    var body = response.getBody();
+    gs.error("]]>📦<![CDATA[ Filtered DigiCert Response: " + body);
+
+    var parsed = JSON.parse(body);
+
+    // Optional: clean old records if you're replacing
+    var del = new GlideRecord('x_1586600_test_sno_endpoint_table');
+    del.query();
+    while (del.next()) del.deleteRecord();
+
+    var rows = [];  // ✅ Declare rows array
+
+    if (parsed && parsed.items) {
+      parsed.items.forEach(function(item) {
+        // insert into table
+        var gr = new GlideRecord('x_1586600_test_sno_endpoint_table');
+        gr.initialize();
+        gr.setValue('application', item.application || '');
+        gr.setValue('host_name', item.hostname || '');  // ✅ fix key
+        gr.setValue('common_name', item.common_name || '');
+        gr.setValue('valid_to', item.valid_to || '');
+        gr.setValue('endpoint_location', item.location || '');
+        gr.setValue('automation_status', item.automation_status || '');
+        gr.setValue('certificate_id', item.certificate_id || '');
+        gr.setValue('agent_name', agent); // store for filtering
+        gr.insert();
+
+        // add to rows array for return to client
+        rows.push({
+          sys_id: item.certificate_id || '',
+          application: item.application || '',
+          host_name: item.hostname || '',
+          common_name: item.common_name || '',
+          valid_to: item.valid_to || '',
+          endpoint_location: item.location || '',
+          automation_status: item.automation_status || ''
+        });
+      });
+    }
+
+    return JSON.stringify(rows);  // ✅ Now returns filtered results
+  }
+
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-17 22:42:32</sys_created_on>
+        <sys_id>d84be36583ba62106982fe55eeaad31b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>FilterEndpointsByAgent</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sys_script_include_d84be36583ba62106982fe55eeaad31b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 22:47:17</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>d84be36583ba62106982fe55eeaad31b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-17 22:42:32</sys_created_on>
+        <sys_id>818b632583ba62106982fe55eeaad323</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-17 22:42:32</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

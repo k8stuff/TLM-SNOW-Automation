@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $window) {
+  var c = this;
+
+  c.data.statusMsg = "";
+
+  c.save = function() {
+    c.data.statusMsg = "";
+    c.server.get({
+      action: 'save',
+      account_id: c.data.accountId,
+      api_key: c.data.apiKey
+    }).then(function(response){
+      c.data.statusMsg = response.data.message;
+
+      if (response.data.status === 'success') {
+        // Optionally, short delay so user sees the message
+        setTimeout(function() {
+          $window.location.href = "https://dev308951.service-now.com/rm?id=rajiv_s_portal";
+        }, 1000);
+      }
+    });
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.dc1-setup-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.setup-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+
+  .status-msg p {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .status-msg p[style*="color:green"] {
+    background: #e6ffed;
+    color: #006400;
+  }
+
+  .status-msg p[style*="color:red"] {
+    background: #ffe6e6;
+    color: #8b0000;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dc1_setup</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>DC1 Setup</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  if (input && input.action === 'save') {
+    if (!gs.hasRole('admin')) {
+      data.status = 'error';
+      data.message = 'Admin role required';
+      return;
+    }
+
+    var accountId = (input.account_id || '').trim();
+    var apiKey = (input.api_key || '').trim();
+
+    if (!accountId || !apiKey) {
+      data.status = 'error';
+      data.message = 'Missing inputs';
+      return;
+    }
+
+    try {
+      gs.setProperty('x_1586600_test_sno.dc1_account_id', accountId);
+      gs.setProperty('x_1586600_test_sno.dc1_api_key', apiKey);
+      gs.setProperty('x_1586600_test_sno.first_run_complete', 'true');
+
+      // --- After setting properties, immediately repopulate tables ---
+      var repopEndpoints = new RepopulateTables();
+      repopEndpoints.repopulateFunction();
+
+      var repopCerts = new RepopulateCertificateTables();
+      repopCerts.repopulateFunction();
+
+      data.status = 'success';
+      data.message = 'Settings saved and tables populated.';
+
+    } catch (e) {
+      data.status = 'error';
+      data.message = e.message;
+    }
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-17 21:42:17</sys_created_on>
+        <sys_id>fabd5b25837a62106982fe55eeaad373</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>DC1 Setup</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_fabd5b25837a62106982fe55eeaad373</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 20:09:42</sys_updated_on>
+        <template><![CDATA[<div class="dc1-setup-container">
+  <div class="setup-card">
+    <h2>DigiCert One Initial Setup</h2>
+    <p>Please enter your DC1 credentials to configure the application.</p>
+
+    <div class="form-group">
+      <label><strong>DC1 Account ID:</strong></label>
+      <input type="text" class="form-control" ng-model="c.data.accountId" placeholder="e.g., 5f08f6e5-xxxx..." />
+    </div>
+
+    <div class="form-group">
+      <label><strong>Service User API Key:</strong></label>
+      <input type="password" class="form-control" ng-model="c.data.apiKey" placeholder="e.g., 01e8dc..." />
+    </div>
+
+    <button class="btn btn-primary btn-block" ng-click="c.save()">Save and Continue</button>
+
+    <div ng-if="c.data.statusMsg" class="status-msg" ng-bind-html="c.data.statusMsg" style="margin-top: 20px;"></div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

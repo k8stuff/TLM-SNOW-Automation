@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.custom-header {
+	background-color: #F0F8FF;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>certificate_details</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Certificate Details</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:05:03</sys_created_on>
+        <sys_id>d1aae586935ea650c7667a5efaba1081</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Certificate Details</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_d1aae586935ea650c7667a5efaba1081</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:32:41</sys_updated_on>
+        <template><![CDATA[<div class="custom-header">
+<div class="card p-4 mb-4">
+  <h3 class="card p-4 mb-4">Certificate Details</h3>
+    <div class="row">
+      <div class="col-md-6"><strong>Certificate ID:</strong> {{cert.certificate_id}}</div>
+      <div class="col-md-6"><strong>Endpoint ID:</strong> {{cert.endpoint}}</div>
+      <div class="col-md-6"><strong>Current Certificate:</strong> {{cert.current_certificate ? 'Yes' : 'No'}}</div>
+      <div class="col-md-6"><strong>Validity:</strong> {{cert.validity_from}} → {{cert.validity_to}}</div>
+      <div class="col-md-6"><strong>Common Name:</strong> {{cert.common_name}}</div>
+      <div class="col-md-6"><strong>Serial Number:</strong> {{cert.serial_number}}</div>
+      <div class="col-md-6"><strong>Status:</strong> {{cert.status}}</div>
+      <div class="col-md-6"><strong>SANs:</strong> {{cert.sans}}</div>
+      <div class="col-md-6"><strong>Certificate Owner:</strong> {{cert.certificate_owner}}</div>
+      <div class="col-md-6"><strong>Tags:</strong> {{cert.tags}}</div>
+      <div class="col-md-6"><strong>Order ID:</strong> {{cert.order_id}}</div>
+      <div class="col-md-6"><strong>Custom Attributes:</strong> {{cert.custom_attributes}}</div>
+      <div class="col-md-6"><strong>Department:</strong> {{cert.department}}</div>
+    </div>
+</div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>d1aae586935ea650c7667a5efaba1081</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 06:05:03</sys_created_on>
+        <sys_id>91aa214a935ea650c7667a5efaba10dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-24 06:05:03</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_widget_d1aae586935ea650c7667a5efaba1081</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css&gt;.custom-header {
+	background-color: #F0F8FF;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}&lt;/css&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;true&lt;/has_preview&gt;
+        &lt;id&gt;certificate_details&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;
+        &lt;name&gt;Certificate Details&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-24 06:05:03&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;d1aae586935ea650c7667a5efaba1081&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;11&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Certificate Details&lt;/sys_name&gt;
+        &lt;sys_package display_value="Test Snow Automation " source="x_1586600_test_sno"&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Test Snow Automation "&gt;e53c840993d66250c7667a5efaba1019&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_d1aae586935ea650c7667a5efaba1081&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-24 06:32:41&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div class="custom-header"&gt;
+&lt;div class="card p-4 mb-4"&gt;
+  &lt;h3 class="card p-4 mb-4"&gt;Certificate Details&lt;/h3&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Certificate ID:&lt;/strong&gt; {{cert.certificate_id}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Endpoint ID:&lt;/strong&gt; {{cert.endpoint}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Current Certificate:&lt;/strong&gt; {{cert.current_certificate ? 'Yes' : 'No'}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Validity:&lt;/strong&gt; {{cert.validity_from}} → {{cert.validity_to}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Common Name:&lt;/strong&gt; {{cert.common_name}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Serial Number:&lt;/strong&gt; {{cert.serial_number}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Status:&lt;/strong&gt; {{cert.status}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;SANs:&lt;/strong&gt; {{cert.sans}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Certificate Owner:&lt;/strong&gt; {{cert.certificate_owner}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Tags:&lt;/strong&gt; {{cert.tags}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Order ID:&lt;/strong&gt; {{cert.order_id}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Custom Attributes:&lt;/strong&gt; {{cert.custom_attributes}}&lt;/div&gt;
+      &lt;div class="col-md-6"&gt;&lt;strong&gt;Department:&lt;/strong&gt; {{cert.department}}&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+    &lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;
+        &lt;id&gt;d1aae586935ea650c7667a5efaba1081&lt;/id&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-06-24 06:05:03&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;91aa214a935ea650c7667a5efaba10dc&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-06-24 06:05:03&lt;/sys_updated_on&gt;
+        &lt;table&gt;sp_widget&lt;/table&gt;
+        &lt;use_es_latest&gt;true&lt;/use_es_latest&gt;
+    &lt;/sys_es_latest_script&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-300330080</payload_hash>
+        <record_name>Certificate Details</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:29</sys_created_on>
+        <sys_id>d439dbf29352ea50c7667a5efaba1093</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446e250000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:29</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d039dbf2c552ea509faa6c5342022c93</update_guid>
+        <update_guid_history>d039dbf2c552ea509faa6c5342022c93:0,1cd8dbb2d652ea5075f07015bfcad4b4:-1504803480,b0508be6e9da6a50b619398991efb49b:0,92000fa600da6a5091ecbdd78fd7d97d:-652106786,8af0fd02c59ea650c9cf8c86e9a4a393:75124392,2de03d02809ea650b6ace2bc85126ae1:-1044251330,0430394ef85ea650423345bd0ddd4f7c:75124392,daefa9ceb05ea6503af45e2176a15455:-1044251330,f36d690e485ea6506407b5c1d09bd5c1:1076977254,064da58af05ea650cb8b6b5da08a7091:-1515208395,d00d610e7c5ea6502c7e7ce74a4cc933:1663011897,02bce9ca6b5ea6507e411d93f3c5ee38:1912848992,01ace5ca975ea6509a0ee3f872cabbf1:-609767547,fc1bed0a825ea650e57170df106e1982:-459832212,0d0be14a605ea6505fe438ffd0b4d05b:1464415813,51aa214a815ea6504f99ea13023e4fdb:-1482258302</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Certificate Details">d91fbf8893a26210c7667a5efaba10b4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:01:26</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>8123a957067b44aab1bbed1df0480251</sys_id>
+        <sys_metadata>d1aae586935ea650c7667a5efaba1081</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Certificate Details</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_widget_d1aae586935ea650c7667a5efaba1081</sys_update_name>
+        <sys_update_version display_value="sp_widget_d1aae586935ea650c7667a5efaba1081">d439dbf29352ea50c7667a5efaba1093</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 22:01:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

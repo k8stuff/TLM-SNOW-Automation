@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="Rajiv's Portal - Container 2">7489473d9312a650c7667a5efaba1048</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 18:21:12</sys_created_on>
+        <sys_id>b289477d9312a650c7667a5efaba1092</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_row_b289477d9312a650c7667a5efaba1092</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 18:21:12</sys_updated_on>
+    </sp_row>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_row_b289477d9312a650c7667a5efaba1092</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="INSERT_OR_UPDATE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="Rajiv's Portal - Container 2">7489473d9312a650c7667a5efaba1048</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-23 18:21:12</sys_created_on>
+        <sys_id>b289477d9312a650c7667a5efaba1092</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_row_b289477d9312a650c7667a5efaba1092</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-23 18:21:12</sys_updated_on>
+    </sp_row>
+</record_update>]]></payload>
+        <payload_hash>-773322435</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:29</sys_created_on>
+        <sys_id>1839dbf29352ea50c7667a5efaba107f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446d1e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:29</sys_updated_on>
+        <type>Row</type>
+        <update_guid>1439dbf2fa52ea50fadfb34b5cfd027f</update_guid>
+        <update_guid_history>1439dbf2fa52ea50fadfb34b5cfd027f:0,23c89bb29652ea506b685166a0809084:562565169,64508be6c8da6a50536279616ed73b6e:0,6100cba63fda6a504a226f43c5e9d95c:-1034948140,78355cce8596a650787ecbf4c61c37e9:0,c3741c8e6596a650087efb15739526ef:176332383,4092948a1896a65028ae2f3cc3921182:0,02af88464096a650b9790218a6988bb4:-1768442009,3a89477dab12a650beeb437405a42a93:462266789</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">5b5e216c93eea210c7667a5efaba10ce</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 00:46:07</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>06c1e77e7d0b478a8030fb58085241a4</sys_id>
+        <sys_metadata>b289477d9312a650c7667a5efaba1092</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_row_b289477d9312a650c7667a5efaba1092</sys_update_name>
+        <sys_update_version display_value="sp_row_b289477d9312a650c7667a5efaba1092">1839dbf29352ea50c7667a5efaba107f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 00:46:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

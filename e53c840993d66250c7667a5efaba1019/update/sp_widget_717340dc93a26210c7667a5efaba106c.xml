@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.endpoint-panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin: 32px auto;
+  max-width: 1100px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.5rem;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>endpoint_details_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Endpoint Details Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // Get the sys_id from URL parameters
+    var sysId = $sp.getParameter('sys_id');
+		gs.info("sysId: " + sysId);
+    
+    if (sysId) {
+        // Query your automation table using the sys_id
+        var gr = new GlideRecord('x_1586600_test_sno_endpoint_table'); // Replace with your actual table name
+        if (gr.get(sysId)) {
+            data.endpoint_location = gr.getValue('endpoint_location');
+            data.common_name = gr.getValue('common_name');
+            data.valid_to = gr.getValue('valid_to');
+            data.application = gr.getValue('application');
+            data.automation_status = gr.getValue('automation_status');
+					 	data.endpoint_id = gr.getValue('number');
+            data.hasData = true;
+        }
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:20:35</sys_created_on>
+        <sys_id>717340dc93a26210c7667a5efaba106c</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Endpoint Details Widget</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_widget_717340dc93a26210c7667a5efaba106c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 05:47:41</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.hasData">
+  <div class = "endpoint-panel">
+    <h3>Endpoint Details</h3>
+  	<table class="table">
+    	<tr><th>End Date</th><td>{{data.valid_to}}</td></tr>
+    	<tr><th>IP:Port</th><td>{{data.endpoint_location}}</td></tr>
+    	<tr><th>Common Name</th><td>{{data.common_name}}</td></tr>
+    	<tr><th>Endpoint Status</th><td>{{data.automation_status}}</td></tr>
+    	<tr><th>Application and Version</th><td>{{data.application}}</td></tr>
+  	</table>
+</div>
+  </div>
+<div ng-if="!data.hasData">
+  <p>No endpoint data found.</p>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>717340dc93a26210c7667a5efaba106c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:20:35</sys_created_on>
+        <sys_id>f97340dc93a26210c7667a5efaba106e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 22:20:35</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="DELETE">
+        <child display_value="My Hello World 1">3ded70c193da6250c7667a5efaba10d4</child>
+        <cloned>2025-06-21 00:15:39</cloned>
+        <last_validated>2025-06-21 00:15:39</last_validated>
+        <parent display_value="Hello World 1">6f2cff80d721120023c84f80de61033c</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function() {	
+	var c = this;		
+  c.display = function() {		
+		c.data.message = (c.data.sometext) ? 'Hello ' + c.data.sometext + '!' : '';
+	}
+	
+	c.display();
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;h1 {
+color: #428bca;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data&gt;{
+	"data": {
+		"sometext": "world"
+	}
+}&lt;/demo_data&gt;&lt;description/&gt;&lt;docs display_value="Widgets"&gt;948bab53d721120023c84f80de61034e&lt;/docs&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;hello-world&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;Hello World 1&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script/&gt;&lt;servicenow&gt;true&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-02-08 21:36:22&lt;/sys_created_on&gt;&lt;sys_id&gt;6f2cff80d721120023c84f80de61033c&lt;/sys_id&gt;&lt;sys_mod_count&gt;181&lt;/sys_mod_count&gt;&lt;sys_name&gt;Hello World 1&lt;/sys_name&gt;&lt;sys_package display_value="Service Portal - Core" source="com.glide.service-portal"&gt;627973aa5cc022105590c762d23e6304&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_6f2cff80d721120023c84f80de61033c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-03-02 00:15:45&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+ Enter your name:
+ &lt;input type="text" ng-model="c.data.sometext" ng-change="c.display()"/&gt;
+ &lt;h1&gt;{{ c.data.message }}&lt;/h1&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 00:15:39</sys_created_on>
+        <sys_id>f1ed70c193da6250c7667a5efaba10d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3ded70c193da6250c7667a5efaba10d4</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_f1ed70c193da6250c7667a5efaba10d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 00:15:39</sys_updated_on>
+    </sp_rel_widget_clone>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</application>
+        <file_path/>
+        <instance_id>9bf87560eb6022185a2dfceacad0cd94</instance_id>
+        <instance_name>dev308951</instance_name>
+        <name>sp_rel_widget_clone_f1ed70c193da6250c7667a5efaba10d8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="INSERT_OR_UPDATE">
+        <child display_value="My Hello World 1">3ded70c193da6250c7667a5efaba10d4</child>
+        <cloned>2025-06-21 00:15:39</cloned>
+        <last_validated>2025-06-21 00:15:39</last_validated>
+        <parent display_value="Hello World 1">6f2cff80d721120023c84f80de61033c</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function() {	
+	var c = this;		
+  c.display = function() {		
+		c.data.message = (c.data.sometext) ? 'Hello ' + c.data.sometext + '!' : '';
+	}
+	
+	c.display();
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;h1 {
+color: #428bca;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data&gt;{
+	"data": {
+		"sometext": "world"
+	}
+}&lt;/demo_data&gt;&lt;description/&gt;&lt;docs display_value="Widgets"&gt;948bab53d721120023c84f80de61034e&lt;/docs&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;hello-world&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;Hello World 1&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script/&gt;&lt;servicenow&gt;true&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-02-08 21:36:22&lt;/sys_created_on&gt;&lt;sys_id&gt;6f2cff80d721120023c84f80de61033c&lt;/sys_id&gt;&lt;sys_mod_count&gt;181&lt;/sys_mod_count&gt;&lt;sys_name&gt;Hello World 1&lt;/sys_name&gt;&lt;sys_package display_value="Service Portal - Core" source="com.glide.service-portal"&gt;627973aa5cc022105590c762d23e6304&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_6f2cff80d721120023c84f80de61033c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-03-02 00:15:45&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+ Enter your name:
+ &lt;input type="text" ng-model="c.data.sometext" ng-change="c.display()"/&gt;
+ &lt;h1&gt;{{ c.data.message }}&lt;/h1&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 00:15:39</sys_created_on>
+        <sys_id>f1ed70c193da6250c7667a5efaba10d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3ded70c193da6250c7667a5efaba10d4</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_f1ed70c193da6250c7667a5efaba10d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 00:15:39</sys_updated_on>
+    </sp_rel_widget_clone>
+</record_update>]]></payload>
+        <payload_hash>1277552755</payload_hash>
+        <record_name>3ded70c193da6250c7667a5efaba10d4</record_name>
+        <reverted_from/>
+        <source>2c2957f29352ea50c7667a5efaba1010</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:03:29</sys_created_on>
+        <sys_id>5039dbf29352ea50c7667a5efaba1058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197ae446c5e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 22:03:29</sys_updated_on>
+        <type>Widget Clone</type>
+        <update_guid>5c39dbf2f852ea50cd9740ee0bcb7957</update_guid>
+        <update_guid_history>5c39dbf2f852ea50cd9740ee0bcb7957:0,62c85bb2b252ea50b1ef57f79158cc7d:-603819161,2c508be6a2da6a503173c0581783655f:0,28008ba684da6a502f8e3e067401f621:-140963963,3c355cce7696a650c3d5978aee54c2e0:0,6a741c8eec96a650b023a67dc9138793:-565354039,8092948ac696a650f498050f2200ab79:0,29af4846be96a650d0df4a9ac59c4efa:-117291737,f1ed3885e9da6250f5acf3da203d8fcd:1620664411</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">c3fe3f8893a26210c7667a5efaba1000</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-30 22:01:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_rel_widget_clone">sp_rel_widget_clone</sys_db_object>
+        <sys_id>450143081fcd4348b6d66bf25043c3c4</sys_id>
+        <sys_metadata>f1ed70c193da6250c7667a5efaba10d8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3ded70c193da6250c7667a5efaba10d4</sys_name>
+        <sys_package display_value="Test Snow Automation " source="x_1586600_test_sno">e53c840993d66250c7667a5efaba1019</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Test Snow Automation ">e53c840993d66250c7667a5efaba1019</sys_scope>
+        <sys_scope_delete display_value="">810b05d606a34f30a7e994a04d939900</sys_scope_delete>
+        <sys_update_name>sp_rel_widget_clone_f1ed70c193da6250c7667a5efaba10d8</sys_update_name>
+        <sys_update_version display_value="sp_rel_widget_clone_f1ed70c193da6250c7667a5efaba10d8">5039dbf29352ea50c7667a5efaba1058</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-30 22:01:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
